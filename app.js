@@ -1,5 +1,8 @@
-var restify = require('restify');
+
 var http = require('http');
+var httpProxy = require('http-proxy');
+ 
+var proxy = httpProxy.createProxyServer({});
 
 // var server = restify.createServer({
 //   name: 'MyApp'
@@ -43,8 +46,7 @@ var http = require('http');
 
 var server = http.createServer(function(request, response) {
 
-response.writeHead(200, {"Content-Type": "text/plain"});
-response.end("Hello Azure!");
+    proxy.web(request,  response, { target: 'http://jbhappinfobot-dev.jbhunt.com' });
 
 });
 

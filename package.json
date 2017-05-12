@@ -8,6 +8,7 @@
   },
   "author": "Daniel Trimble",
   "dependencies": {
-    "restify": "^4.3.0"
+    "restify": "^4.3.0",
+    "http-proxy": "^1.16.2"
   }
 }
